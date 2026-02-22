@@ -186,7 +186,7 @@ async function getRate(base, target) {
 
   const data = await res.json();
   ratesCache[base] = data[base];
-  console.log(ratesCache);
+  // console.log(ratesCache);
   return ratesCache[base][target];
 }
 
