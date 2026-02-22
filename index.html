@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./currency_converter_enchanced.js"></script>
+    <title>Convert currency</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      .container--dropdown {
+        display: flex;
+        margin: 10px 0;
+        gap: 50px;
+      }
+
+      .dropdown {
+        width: 300px;
+      }
+
+      .dropdown .from,
+      .dropdown .to {
+        height: 30px;
+        border: 0;
+        border-bottom: solid thin black;
+        width: 58%;
+      }
+
+      .dropdown .from:focus,
+      .dropdown .to:focus {
+        outline: none;
+        background-color: rgb(243, 243, 243);
+      }
+
+      img {
+        width: 30px;
+      }
+
+      .selected {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        align-self: flex-start;
+      }
+
+      .options {
+        padding: 5px;
+        background-color: beige;
+        box-shadow: 0 5px 5px grey;
+        overflow-y: auto;
+        max-height: 200px;
+      }
+
+      /* Chrome, Edge, Safari */
+      .options::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Firefox */
+      .options {
+        scrollbar-width: none;
+      }
+
+      /* IE / old Edge (προαιρετικό) */
+      .options {
+        -ms-overflow-style: none;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      li:hover {
+        background-color: rgb(212, 212, 212);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .flag--container {
+        width: 50px;
+        height: 20px;
+      }
+
+      .selection--container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: solid thin black;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 3px;
+      }
+
+      .flag--container {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Convert Currency</h3>
+    <div class="container--dropdown">
+      <div class="dropdown dropdown--from">
+        <div class="selection--container selection--container--from">
+          <input type="number" step="0.10" class="from" required />
+          <div class="flag--container flag--container--from"></div>
+          <button type="button" class="selected selected--from">&#x2B9F</button>
+          <button type="button" class="selected close--from hidden">&#x2718</button>
+        </div>
+        <ul class="options options--from hidden">
+          <!-- <li data-value="FJD" class="code--flag">
+          FJD (Fiji Dollar)
+          <img src="https://currencyfreaks.com/photos/flags/fjd.png" />
+        </li> -->
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown--to">
+        <div class="selection--container selection--container--to">
+          <input type="text" class="to" value="" readonly />
+          <div class="flag--container flag--container--to"></div>
+          <button type="button" class="selected selected--to">&#x2B9F</button>
+          <button type="button" class="selected close--to hidden">&#x2718</button>
+        </div>
+        <ul class="options options--to hidden">
+          <!-- <li data-value="FJD" class="code--flag">
+          FJD (Fiji Dollar)
+          <img src="https://currencyfreaks.com/photos/flags/fjd.png" />
+        </li> -->
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
