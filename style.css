@@ -192,8 +192,8 @@ footer {
 
 .footer-bottom .copyright svg {
   fill: #9c8a03;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.4rem;
+  height: 1.4rem;
   vertical-align: middle;
   margin-left: 0.5rem;
 }
@@ -234,6 +234,6 @@ footer {
   .container--dropdown {
     flex-direction: column;
     gap: 20px;
-    width: 70%;
+    width: 80%;
   }
 }
