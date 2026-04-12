@@ -21,7 +21,7 @@
           <div class="selection--container selection--container--from">
             <input type="number" step="0.10" class="from" required />
             <div class="flag--container flag--container--from"></div>
-            <button type="button" class="selected selected--from">&#x2B9F</button>
+            <button type="button" class="selected selected--from">&#9660;</button>
             <button type="button" class="selected close--from hidden">&#x2718</button>
           </div>
           <ul class="options options--from hidden">
@@ -36,7 +36,7 @@
           <div class="selection--container selection--container--to">
             <input type="text" class="to" value="" readonly />
             <div class="flag--container flag--container--to"></div>
-            <button type="button" class="selected selected--to">&#x2B9F</button>
+            <button type="button" class="selected selected--to">&#9660;</button>
             <button type="button" class="selected close--to hidden">&#x2718</button>
           </div>
           <ul class="options options--to hidden">
@@ -48,5 +48,59 @@
         </div>
       </div>
 </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h4>Currency Converter</h4>
+            <p>
+              Dynamic App built with Vanilla JS.
+            </p>
+          </div>
+          <div class="footer-api">
+            <p>
+             Real-time data fetching.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; <span id="current-year"></span> Made with 💻 & ☕ by
+            <strong>Epameinondas Theofanidis</strong>
+            <svg>
+              <use href="src/img/icons.svg#icon-my-logo"></use>
+            </svg>
+          </p>
+          <div class="social-links">
+            <a
+              href="mailto:nodas.theofanidis@gmail.com"
+              title="Στείλτε μου email"
+              >Email</a
+            >
+            <a
+              href="https://github.com/το-όνομά-σου"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              >GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/το-όνομά-σου"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('current-year').textContent =
+        new Date().getFullYear();
+    </script>
 </body>
 </html>
