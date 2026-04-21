@@ -13,6 +13,7 @@ const btnCloseFrom = document.querySelector('.close--from');
 const btnCloseTo = document.querySelector('.close--to');
 const btnOpenFrom = document.querySelector('.selected--from');
 const btnOpenTo = document.querySelector('.selected--to');
+const btnSwap = document.querySelector('.swap');
 
 const inputFrom = document.querySelector('.from');
 const inputTo = document.querySelector('.to');
@@ -141,7 +142,7 @@ function setSelected(container, codeLower) {
 }
 
 // =====================
-// SELECT FROM / TO
+// SELECT FROM / TO / SWAP
 // =====================
 countryListFrom.addEventListener('click', async e => {
   const li = e.target.closest('.code--flag');
@@ -167,6 +168,18 @@ countryListTo.addEventListener('click', async e => {
 
   countryListTo.classList.add('hidden');
   syncIcons(countryListTo, btnOpenTo, btnCloseTo);
+});
+
+btnSwap.addEventListener('click', async e => {
+  const currentFrom = codeContainerFrom.textContent.trim();
+  const currentTo = codeContainerTo.textContent.trim();
+
+  if (!e.target.closest('.icon--swap')) return;
+
+  setSelected(codeContainerFrom, currentTo);
+  setSelected(codeContainerTo, currentFrom);
+
+  await getExchange();
 });
 
 // =====================
@@ -208,7 +221,7 @@ async function getExchange() {
 
   try {
     const rate = await getRate(currencyFrom, currencyTo);
-    inputTo.value = (amount * rate).toFixed(2);
+    inputTo.value = `${(amount * rate).toFixed(4)}     (${(amount * rate).toFixed(2)})`;
   } catch (err) {
     alert(err.message);
   }

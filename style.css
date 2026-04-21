@@ -23,7 +23,27 @@ body {
 .container--dropdown {
   display: flex;
   margin: 20px 0;
-  gap: 50px;
+  gap: 20px;
+}
+
+.container--dropdown .swap {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+}
+
+.container--dropdown .swap svg {
+  width: 80%;
+  height: 80%;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.container--dropdown .swap svg:hover {
+  transform: rotate(180deg);
 }
 
 .dropdown {
@@ -219,12 +239,18 @@ footer {
 }
 
 /* Responsive για κινητά */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .footer-top,
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     align-items: center;
+  }
+
+  .footer-bottom .copyright svg {
+    width: 1rem;
+    height: 1rem;
+    margin: 0.2rem 0;
   }
 
   .social-links {
@@ -233,7 +259,18 @@ footer {
 
   .container--dropdown {
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     width: 80%;
+    align-items: center;
+  }
+
+  .container--dropdown .swap svg {
+    width: 90%;
+    height: 90%;
+    transform: rotate(90deg);
+  }
+
+  .container--dropdown .swap svg:hover {
+    transform: rotate(90deg);
   }
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="./currency_converter_enchanced.js"></script>
@@ -32,9 +33,15 @@
           </ul>
         </div>
 
+        <button class="swap">
+          <svg class="icon--swap">
+            <use href="./img/icons.svg#swap-sign"></use>
+          </svg>
+        </button>
+        
         <div class="dropdown dropdown--to">
           <div class="selection--container selection--container--to">
-            <input type="text" class="to" value="" readonly />
+            <input type="text" class="to" readonly />
             <div class="flag--container flag--container--to"></div>
             <button type="button" class="selected selected--to">&#9660;</button>
             <button type="button" class="selected close--to hidden">&#x2718</button>
