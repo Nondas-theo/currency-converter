@@ -221,7 +221,7 @@ async function getExchange() {
 
   try {
     const rate = await getRate(currencyFrom, currencyTo);
-    inputTo.value = `${(amount * rate).toFixed(4)}     (${(amount * rate).toFixed(2)})`;
+    inputTo.value = `${(amount * rate).toFixed(4)} -- (${(amount * rate).toFixed(2)})`;
   } catch (err) {
     alert(err.message);
   }
